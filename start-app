@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+appdir="example"
+
+cd /home/$NITROUS_USERNAME/code/$appdir
+source bin/activate
+echo "Running app: 0.0.0.0:$NITROUS_PREVIEW_PORT"
+gunicorn ${appdir}.wsgi --bind 0.0.0.0:$NITROUS_PREVIEW_PORT
